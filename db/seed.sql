@@ -1,14 +1,27 @@
-INSERT INTO department (department_name)
-VALUES  ('History'),
-        ('Philosophy'),
-        ('Psychology');
+INSERT INTO departments (department_name)
+VALUES  ('Engineering'),
+        ('Finance'),
+        ('Legal'),
+        ('Sales');
 
-INSERT INTO role (title, salary, department_id)
-VALUES  ('Professor', 70000.0, 1),
-        ('Associate Professor', 60000.0, 1),
-        ('Adjunct Professor', 50000.0, 1);
+INSERT INTO roles (title, salary, department_id)
+VALUES  ('Sales Lead', 60000, 4),
+        ('Salesperson', 40000, 4),
+        ('Lead Software Engineer', 100000.0, 1),
+        ('Software Engineer', 80000.0, 1),
+        ('Accounting Manager',90000, 2),
+        ('Accounts Payable', 50000, 2),
+        ('Corporate Counsel', 250000, 3),
+        ('Paralegal', 75000, 3);
 
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES  ('John', 'Johnson', 1, 1),
-        ('Dave', 'Davidson', 2 , 1),
-        ('Jan', 'Janson', 3, 1);
+INSERT INTO employees (first_name, last_name, role_id, manager_id)
+VALUES  ('John', 'Delorean', 1, NULL),
+        ('Dave', 'Thomas', 2 , 1),
+        ('Janis', 'Joplin', 3, NULL),
+        ('Alan', 'Parsons', 4, 3),
+        ('Fred', 'Nietzsche', 4 , 3),
+        ('Jack', 'Kennedy', 7, NULL),
+        ('Paul', 'McCartney', 8, 6),
+        ('Serena', 'Williams', 5, NULL),
+        ('Thomas', 'Cruise', 6, 8);
+
