@@ -10,7 +10,7 @@ const mainMenuQuestions = [
     type: 'list',
     name: 'userAction',
     message: `What would you like to do?`,
-    choices: ['View All Departments', 'View All Roles', 'View All Employees', 'Add a Department', 'Add a Role', 'Add an Employee', 'Update an Employee Role']
+    choices: ['View All Departments', 'View All Roles', 'View All Employees', 'Add a Department', 'Add a Role', 'Add an Employee', 'Update an Employee Role', 'Quit']
   },
 ];
 
@@ -46,10 +46,14 @@ const init = async (db) => {
   if (answers.userAction === "Update an Employee Role") {
     await query.employeeUpdate(db);
     init(db)
+  };
+  if (answers.userAction === "Quit") {
+    console.log("Goodbye");
+    process.exit(0);
   }
 }
 
 
 
 //calling init function on startup
-module.exports = {init}
+module.exports = { init }
